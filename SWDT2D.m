@@ -1,4 +1,4 @@
-function dt = EulerDT2D(Q, g)
+function dt = SWDT2D(Q, g)
 
 % function dt = EulerDT2D(Q, gamma)
 % purpose: compute the time step dt for the compressible Euler equations

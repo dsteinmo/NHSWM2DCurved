@@ -33,7 +33,7 @@ disp('done');
 
 % compute initial timestep
 gamma = 1.4;
-dt = EulerDT2D(Q, g); tstep = 1; time = 0;
+dt = SWDT2D(Q, g); tstep = 1; time = 0;
 rhsQ = 0*Q; resQ = 0*Q;
 dtinit = dt;
 
@@ -186,7 +186,7 @@ while (time<FinalTime)
   % Increment time and compute new timestep
   time = time+dt;
   OutTimeCounter = OutTimeCounter+dt;
-  dt = EulerDT2D(Q, g);
+  dt = SWDT2D(Q, g);
 
   if dt <= 0.1*dtinit
        disp('time-step is getting puny. probably approaching an instability. Terminating...');
