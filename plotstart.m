@@ -113,4 +113,4 @@ FinalTime = 3600*24*3;
 NumOuts=200;
 
 return;
-[Q] = CurvedEuler2D(Q, FinalTime, NumOuts, BCSolution, fluxtype,g,H,fRot); 
+[Q] = CurvedNHSWM2D(Q, FinalTime, NumOuts, BCSolution, fluxtype,g,H,fRot); 

@@ -7,6 +7,8 @@ This MATLAB/GNU Octave code repository can be used to simulate weakly non-hydros
     $ git clone https://github.com/dsteinmo/NHSWM2DCurved.git
     $ cd NHSWM2DCurved
     $ matlab -nodesktop -nosplash          # OR: octave-cli
+    $ setPaths
+    $ CurvedNHSWMDriver2D
 
 ## Theoretical description
 

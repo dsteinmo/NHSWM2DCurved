@@ -1,6 +1,6 @@
-function Q = CurvedEuler2D(Q, FinalTime, NumOuts, ExactSolutionBC, fluxtype,g,H,fRot)
+function Q = CurvedNHSWM2D(Q, FinalTime, NumOuts, ExactSolutionBC, fluxtype,g,H,fRot)
 
-% function Q = CurvedEuler2D(Q, FinalTime, ExactSolution, ExactSolutionBC, fluxtype)
+% function Q = CurvedNHSWM2D(Q, FinalTime, ExactSolution, ExactSolutionBC, fluxtype)
 % Purpose  : Integrate 2D Euler equations using a 3rd order SSP RK
 
 Globals2D;
@@ -58,19 +58,19 @@ while (time<FinalTime)
   end
   
   % 3rd order SSP Runge-Kutta
-  rhsQ  = CurvedEulerRHS2D(Q, time, ExactSolutionBC, fluxtype,g,Hx,Hy,fRot);
+  rhsQ  = CurvedNHSWMRHS2D(Q, time, ExactSolutionBC, fluxtype,g,Hx,Hy,fRot);
   for n=1:3
        rhsQ(:,:,n) = Filt*rhsQ(:,:,n);
   end
   Q1 = Q + dt*rhsQ;
   
-  rhsQ  = CurvedEulerRHS2D(Q1, time, ExactSolutionBC, fluxtype,g,Hx,Hy,fRot);
+  rhsQ  = CurvedNHSWMRHS2D(Q1, time, ExactSolutionBC, fluxtype,g,Hx,Hy,fRot);
   for n=1:3
        rhsQ(:,:,n) = Filt*rhsQ(:,:,n);
   end
   Q2 = (3*Q + Q1 + dt*rhsQ)/4;
   
-  rhsQ  = CurvedEulerRHS2D(Q2, time, ExactSolutionBC, fluxtype,g,Hx,Hy,fRot);
+  rhsQ  = CurvedNHSWMRHS2D(Q2, time, ExactSolutionBC, fluxtype,g,Hx,Hy,fRot);
   for n=1:3
        rhsQ(:,:,n) = Filt*rhsQ(:,:,n);
   end

@@ -1,6 +1,6 @@
-function [rhsQ] = CurvedEulerRHS2D(Q, time, SolutionBC, fluxtype,g,Hx,Hy,fRot)
+function [rhsQ] = CurvedNHSWMRHS2D(Q, time, SolutionBC, fluxtype,g,Hx,Hy,fRot)
 
-% function [rhsQ] = CurvedEulerRHS2D(Q, time, SolutionBC, fluxtype)
+% function [rhsQ] = CurvedNHSWMRHS2D(Q, time, SolutionBC, fluxtype)
 % Purpose: compute right hand side residual for the compressible Euler 
 %          gas dynamics equations
 
