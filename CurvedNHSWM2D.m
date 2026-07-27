@@ -50,7 +50,6 @@ save(sprintf('out%07d.mat',tstep),'eta','u','v','N','K','x','y','time','H');
 disp('outputting at t=0');
 
 % outer time step loop 
-figure(1); colormap(darkjet);
 while (time<FinalTime)
   
   if(time+dt>FinalTime)
